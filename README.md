@@ -12,8 +12,8 @@
 
 ## Docker components
 - [Dockerfile](#1-dockerfile)
-- Images
-- Container
+- [Docker Image](#2-docker-image)
+- Docker Container
 - Dockercompose
 
 ### 1. Dockerfile
@@ -42,9 +42,28 @@ RUN npm install
 CMD ["npm", "start"]
 
 ```
-**Quick Summary:**
+**Quick Summary:**<br/>
 **FROM** → Selects the base environment.<br/>
 **WORKDIR** → Where future commands will run inside container.<br/>
 **COPY** → Transfers your project files into the container.<br/>
 **RUN** → Executes installation commands during image build.<br/>
 **CMD** → Defines what should happen when the container runs.<br/>
+
+### 2. Docker Image
+- A snapshot (template) of an application, including code, libraries, and dependencies.
+
+***Why Needed?***
+- You can share and run your app anywhere, anytime.
+- No need manually setup environments
+
+Examples:  
+Node.js app image, Python app image, Nginx server image, Your custom app image, etc.
+
+***How to build a Docker Image***
+```
+docker build -t myapp .
+---
+> Build an image using the current folder and name it myapp. Here, `-t` means `tag` and is used for image versions. If you don't use tag, it will automatically define `latest` tag. 
+
+**Note**
+- Images are **immutable** (they don't change once built, if you want to change you have to built new image).
