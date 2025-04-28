@@ -18,6 +18,7 @@
 
 ### 1. Dockerfile
 - A text file with instructions to build a Docker image.
+
 Why Needed?
 - Automates image creation
 - No need manually setup environments
@@ -41,9 +42,14 @@ RUN npm install
 CMD ["npm", "start"]
 
 ```
-Quick Summary:
+<b>Quick Summary:</b>
+
 FROM → Selects the base environment.
+
 WORKDIR → Where future commands will run inside container.
+
 COPY → Transfers your project files into the container.
+
 RUN → Executes installation commands during image build.
+
 CMD → Defines what should happen when the container runs.
