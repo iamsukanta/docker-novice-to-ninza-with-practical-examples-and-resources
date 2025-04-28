@@ -16,8 +16,34 @@
 - Container
 - Dockercompose
 
-1. Dockerfile
+### 1. Dockerfile
 - A text file with instructions to build a Docker image.
 Why Needed?
 - Automates image creation
 - No need manually setup environments
+
+Examples:
+
+```
+# Use the official Node.js 18 image as the base (comes with Node + npm pre-installed)
+FROM node:18
+
+# Set the working directory inside the container to /app
+WORKDIR /app
+
+# Copy all files from the current directory on your machine to /app in the container
+COPY . .
+
+# Install all dependencies listed in package.json
+RUN npm install
+
+# Define the command to run when the container starts: "npm start"
+CMD ["npm", "start"]
+
+```
+Quick Summary:
+FROM → Selects the base environment.
+WORKDIR → Where future commands will run inside container.
+COPY → Transfers your project files into the container.
+RUN → Executes installation commands during image build.
+CMD → Defines what should happen when the container runs.
