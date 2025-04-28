@@ -11,7 +11,7 @@
 - and many more.
 
 ## Docker components
-- Dockerfile
+- [Dockerfile](#1-dockerfile)
 - Images
 - Container
 - Dockercompose
@@ -19,7 +19,7 @@
 ### 1. Dockerfile
 - A text file with instructions to build a Docker image.
 
-Why Needed?
+***Why Needed?***
 - Automates image creation
 - No need manually setup environments
 
@@ -42,14 +42,9 @@ RUN npm install
 CMD ["npm", "start"]
 
 ```
-<b>Quick Summary:</b>
-
-FROM → Selects the base environment.
-
-WORKDIR → Where future commands will run inside container.
-
-COPY → Transfers your project files into the container.
-
-RUN → Executes installation commands during image build.
-
-CMD → Defines what should happen when the container runs.
+**Quick Summary:**
+**FROM** → Selects the base environment.<br/>
+**WORKDIR** → Where future commands will run inside container.<br/>
+**COPY** → Transfers your project files into the container.<br/>
+**RUN** → Executes installation commands during image build.<br/>
+**CMD** → Defines what should happen when the container runs.<br/>
