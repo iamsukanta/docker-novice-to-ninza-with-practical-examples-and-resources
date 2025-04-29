@@ -151,3 +151,11 @@ docker-compose up \  # Start all services defined in docker-compose.yml
   -d                 # Run them in detached/background mode
 
 ```
+
+## Docker Commands
+
+### Docker Containers Command
+
+```
+docker ps
+# To show all running containers. Here, ps stands process status.
