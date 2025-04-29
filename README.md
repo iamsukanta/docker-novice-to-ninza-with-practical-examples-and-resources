@@ -151,3 +151,43 @@ docker-compose up \  # Start all services defined in docker-compose.yml
   -d                 # Run them in detached/background mode
 
 ```
+
+## Docker Commands
+
+### Docker Containers Command
+
+```
+# To show all running containers. Here, ps stands for process status
+> docker ps
+
+# To show all containers both running and stopped conainers
+> docker ps -a
+
+# To stop a specific container
+> docker stop <container_id or container_name>
+
+# To stop all running containers, here -q means quit mode and it gives containers or image ID
+> docker stop $(docker ps -q)
+
+# To start a specific container
+> docker start <container_id or container_name>
+
+# To start all stopped container
+> docker start $(docker ps -a -q -f status=exited)
+
+# To restart(stop & start) a specific container
+> docker restart <container_id or container_name>
+
+# To restart(stop & start) all containers
+> docker restart $(docker ps -a -q)
+
+# To delete or remove a specific container
+> docker rm <container_id or container_name>
+
+# To remove all containers both running and stopped container. Here first stop all running containers, then remove all containers.
+> docker stop $(docker ps -q) && docker rm $(docker ps -a -q)
+
+# If you want to force remove, if container is running. But not recommended this step.
+> docker rm -f $(docker ps -a -q)
+
+```
