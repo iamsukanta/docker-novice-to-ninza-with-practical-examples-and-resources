@@ -157,5 +157,11 @@ docker-compose up \  # Start all services defined in docker-compose.yml
 ### Docker Containers Command
 
 ```
-docker ps
-# To show all running containers. Here, ps stands process status.
+# To show all running containers. Here, ps stands for process status.
+> docker ps
+
+# To show all containers both running and stopped conainers.
+> docker ps -a
+
+# To stop a specific container.
+> docker stop <container_id or container_name>
