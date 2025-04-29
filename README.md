@@ -13,8 +13,18 @@
 ## Docker components
 - [Dockerfile](#1-dockerfile)
 - [Docker Image](#2-docker-image)
-- Docker Container
-- Dockercompose
+- [Docker Container](#3-docker-container)
+- [Dockercompose](#4-dockercompose)
+
+***✅ Steps:***
+
+**Dockerfile** → Needed to create a custom Image.
+
+**Image** → Runs inside a Container.
+
+**Container** → Your running app.
+
+**docker-compose.yml** → Defines and manages multiple containers together!
 
 ### 1. Dockerfile
 - A text file with instructions to build a Docker image.
@@ -88,3 +98,56 @@ docker run \
 
 **Note**
 - Containers can be stopped, started, deleted easily.
+
+### 4. Dockercompose
+- A tool to define and run multi-container Docker apps using a `docker-compose.yml` file.
+
+
+***Why Needed?***
+- To manage complex apps (e.g., web server + database) easily with one command.
+
+Example: `(docker-compose.yml)`
+
+```
+version: '3'         # Specify the Docker Compose file format version (v3 is commonly used for production)
+
+services:            # Define a list of services (containers) to run together
+
+  app:               # Name of the first service (you can call it anything)
+    build: .         # Build the Docker image from the Dockerfile in the current directory (.)
+    ports:
+      - "3000:3000"  # Map host port 3000 to container port 3000 (app listens here)
+
+  db:                # Name of the second service (MongoDB database service)
+    image: mongo     # Use the official MongoDB image from Docker Hub
+    ports:
+      - "27017:27017" # Map host port 27017 to container port 27017 (MongoDB default port)
+
+```
+
+**📦 Step-by-Step What Happens:**<br/>
+- Docker Compose reads this file.
+
+- It builds the app service from the local Dockerfile.
+
+- It pulls the official mongo image for the db service.
+
+- It starts both containers (app and db) together.
+
+Ports are exposed so you can access:
+```
+http://localhost:3000 (your app)
+mongodb://localhost:27017 (your database)
+```
+
+
+***To start all services:***
+
+```
+docker-compose up -d
+-------------------------
+
+docker-compose up \  # Start all services defined in docker-compose.yml
+  -d                 # Run them in detached/background mode
+
+```
