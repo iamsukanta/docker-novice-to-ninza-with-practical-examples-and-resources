@@ -54,7 +54,7 @@ CMD ["npm", "start"]
 
 ***Why Needed?***
 - You can share and run your app anywhere, anytime.
-- No need manually setup environments
+- No need manually setup environments.
 
 Examples:  
 Node.js app image, Python app image, Nginx server image, Your custom app image, etc.
@@ -62,8 +62,29 @@ Node.js app image, Python app image, Nginx server image, Your custom app image, 
 ***How to build a Docker Image***
 ```
 docker build -t myapp .
----
+```
 > Build an image using the current folder and name it myapp. Here, `-t` means `tag` and is used for image versions. If you don't use tag, it will automatically define `latest` tag. 
 
 **Note**
 - Images are **immutable** (they don't change once built, if you want to change you have to built new image).
+
+### 3. Docker Container
+- A running instance of an image.
+
+***Why Needed?***
+- To execute the app in an isolated, lightweight environment.
+
+Examples:
+A Node.js server running inside a container.
+
+```
+docker run -d -p 3000:3000 myapp
+--------------------------------------------------------------
+docker run \
+  -d           # Run in detached (background) mode
+  -p 3000:3000 # Map host port 3000 to container's port 3000
+  myapp        # Use the 'myapp' image to create the container
+```
+
+**Note**
+- Containers can be stopped, started, deleted easily.
