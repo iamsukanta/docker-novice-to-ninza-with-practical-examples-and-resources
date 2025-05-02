@@ -195,7 +195,22 @@ docker-compose up \  # Start all services defined in docker-compose.yml
 ### docker-compose Command
 
 ```
-# If image not created then builds and starts all services in the foreground.
+# Manually builds the images defined in docker-compose.yml.
+> docker-compose build
+
+# If image not build then builds and starts all services in the foreground.
 > docker-compose up
+
+# If image not build then builds and starts all services in the detached mode (background).
+> docker-compose up -d
+
+# Build all services and starts all services in the detached mode (background).
+> docker-compose up -d --build
+
+# Stops and removes all services, networks, and containers created.
+> docker-compose down
+
+# Stops and removes all services, networks, containers and related volumes.
+> docker-compose down --volumes
 
 ```
