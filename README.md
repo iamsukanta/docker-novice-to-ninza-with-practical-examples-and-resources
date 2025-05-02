@@ -191,3 +191,11 @@ docker-compose up \  # Start all services defined in docker-compose.yml
 > docker rm -f $(docker ps -a -q)
 
 ```
+
+### docker-compose Command
+
+```
+# If image not created then builds and starts all services in the foreground.
+> docker-compose up
+
+```
