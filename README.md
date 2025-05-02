@@ -191,3 +191,53 @@ docker-compose up \  # Start all services defined in docker-compose.yml
 > docker rm -f $(docker ps -a -q)
 
 ```
+
+### docker-compose Command
+
+```
+# Manually builds the images defined in docker-compose.yml.
+> docker-compose build
+
+# If image not build then builds and starts all services in the foreground.
+> docker-compose up
+
+# If image not build then builds and starts all services in the detached mode (background).
+> docker-compose up -d
+
+# Build all services and starts all services in the detached mode (background).
+> docker-compose up -d --build
+
+# Stops and removes all services, networks, and containers created.
+> docker-compose down
+
+# Stops and removes all services, networks, containers and related volumes.
+> docker-compose down --volumes
+
+# Stops running containers without removing them.
+> docker-compose stop
+
+# Starts containers that were stopped (but not removed).
+> docker-compose start
+
+# Stops and starts all services (handy for config reloads).
+> docker-compose restart
+
+# Displays logs for all services.
+> docker-compose logs
+
+# Tails logs (live view) like tail -f.
+> docker-compose logs -f
+
+# Lists the status of running services.
+> docker-compose ps
+
+# Runs a command inside a running service container (like bash). Here, exec means execution.
+> docker-compose exec <service> <command>
+
+# Runs a one-off command in a new container of that service.
+> docker-compose run <service> <command>
+
+# Validates and displays the full resolved config (useful for debugging).
+> docker-compose config
+
+```
