@@ -1,0 +1,20 @@
+{
+  "name": "user-app",
+  "version": "1.0.0",
+  "description": "This is a simple node.js and mongodb app for user storing.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon --legacy-watch server.js"
+  },
+  "author": "Sukanta Bala",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "mongoose": "^8.14.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
