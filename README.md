@@ -213,7 +213,7 @@ docker-compose up \  # Start all services defined in docker-compose.yml
 # Stops and removes all services, networks, containers and related volumes.
 > docker-compose down --volumes
 
-# Stops running containers without removing them..
+# Stops running containers without removing them.
 > docker-compose stop
 
 # Starts containers that were stopped (but not removed).
@@ -221,5 +221,14 @@ docker-compose up \  # Start all services defined in docker-compose.yml
 
 # Stops and starts all services (handy for config reloads).
 > docker-compose restart
+
+# Displays logs for all services.
+> docker-compose logs
+
+# Tails logs (live view) like tail -f.
+> docker-compose logs -f
+
+# Lists the status of running services.
+> docker-compose ps
 
 ```
