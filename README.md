@@ -231,4 +231,13 @@ docker-compose up \  # Start all services defined in docker-compose.yml
 # Lists the status of running services.
 > docker-compose ps
 
+# Runs a command inside a running service container (like bash). Here, exec means execution.
+> docker-compose exec <service> <command>
+
+# Runs a one-off command in a new container of that service.
+> docker-compose run <service> <command>
+
+# Validates and displays the full resolved config (useful for debugging).
+> docker-compose config
+
 ```
