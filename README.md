@@ -173,8 +173,15 @@ docker-compose up \  # Start all services defined in docker-compose.yml
 # Tag a local image for pushing to a registry.
 > docker tag <image> <repo>:<tag>
 
-# To remove a specific image. Before running this command make sure your container doesn't depend on this image.
-> docker rmi <image id or name>
+# To remove a specific image. Before running this command make sure your container doesn't depend on this image. You can remove multiple images by adding id or name to the next.
+> docker rmi <image id or name> <image id or name>
+> docker image rm <image id or name> <image id or name>
+
+# Remove dangling (unused) images.
+> docker image prune
+
+# Remove all unused images, not just dangling ones.
+> docker image prune -a
 
 # To remove a specific all images. Make sure your any containers doesn't this images. 
 > docker rmi $(docker images -q)
