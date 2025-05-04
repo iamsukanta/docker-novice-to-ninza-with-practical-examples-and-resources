@@ -154,6 +154,21 @@ docker-compose up \  # Start all services defined in docker-compose.yml
 
 ## Docker Commands
 
+### Docker Images Command
+
+```
+# To show all images
+> docker images
+
+# To remove a specific image. Before running this command make sure your container doesn't depend on this image.
+> docker rmi <image id or name>
+
+# To remove a specific all images. Make sure your any containers doesn't this images. 
+> docker rmi $(docker images -q)
+
+```
+
+
 ### Docker Containers Command
 
 ```
