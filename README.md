@@ -161,6 +161,10 @@ docker-compose up \  # Start all services defined in docker-compose.yml
 > docker images
 > docker image ls (new version command)
 
+# List all images, including intermediate ones.
+> docker images -a
+> docker image ls -a
+
 # Download an image from Docker Hub.
 > docker image pull <image>
 
@@ -185,6 +189,21 @@ docker-compose up \  # Start all services defined in docker-compose.yml
 
 # To remove a specific all images. Make sure your any containers doesn't this images. 
 > docker rmi $(docker images -q)
+
+# Show detailed JSON info about an image.
+> docker image inspect <image>
+
+# Show history of each layer in an image.
+> docker image history <image>
+
+# Save an image to a tar archive (for transfer).
+> docker save -o <file.tar> <image>
+
+# Load an image from a tar file.
+> docker load -i <file.tar>
+
+# Create an alias for an image with a new name or tag.
+> docker image tag <source> <target>
 
 ```
 
