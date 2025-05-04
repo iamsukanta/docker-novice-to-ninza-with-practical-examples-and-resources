@@ -157,8 +157,21 @@ docker-compose up \  # Start all services defined in docker-compose.yml
 ### Docker Images Command
 
 ```
-# To show all images
+# List all local images | To show all images.
 > docker images
+> docker image ls (new version command)
+
+# Download an image from Docker Hub.
+> docker image pull <image>
+
+# Upload your image to a registry (e.g., Docker Hub).
+> docker image push <image>
+
+# Build an image from a Dockerfile and tag it. Here, '.' means current directory
+> docker build -t <name>:<tag> .
+
+# Tag a local image for pushing to a registry.
+> docker tag <image> <repo>:<tag>
 
 # To remove a specific image. Before running this command make sure your container doesn't depend on this image.
 > docker rmi <image id or name>
