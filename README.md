@@ -308,4 +308,10 @@ docker-compose up \  # Start all services defined in docker-compose.yml
 # Show detailed info about a volume.
 > docker volume inspect <name>
 
+> Remove a volume (only if not in use).
+# docker volume rm <name>
+
+# Remove all unused volumes.
+> docker volume prune
+
 ```
