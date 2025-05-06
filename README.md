@@ -295,3 +295,23 @@ docker-compose up \  # Start all services defined in docker-compose.yml
 > docker-compose config
 
 ```
+
+## Docker Volume Command
+
+```
+# List all volumes.
+> docker volume ls
+
+> Create a new volume.
+# docker volume create <name>
+
+# Show detailed info about a volume.
+> docker volume inspect <name>
+
+> Remove a volume (only if not in use).
+# docker volume rm <name>
+
+# Remove all unused volumes.
+> docker volume prune
+
+```
