@@ -302,4 +302,10 @@ docker-compose up \  # Start all services defined in docker-compose.yml
 # List all volumes.
 > docker volume ls
 
+> Create a new volume.
+# docker volume create <name>
+
+# Show detailed info about a volume.
+> docker volume inspect <name>
+
 ```
