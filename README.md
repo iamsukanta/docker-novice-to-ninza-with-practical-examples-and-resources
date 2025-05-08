@@ -16,6 +16,23 @@
 - Docker Networking
 - Docker Layering
 
+### Docker Vs VM
+
+![vm vs docker](Images/VM%20vs%20Docker.png)
+
+**Docker**
+> Docker is a platform that uses containers to run applications in lightweight, isolated environments.
+- Containers share the host OS kernel, unlike VMs.
+- Each container packages only the app and its dependencies.
+- Uses Docker Engine (not a hypervisor).
+
+**VM**
+> A VM is a software emulation of a full physical computer.
+- Each VM has its own OS (called guest OS).
+- It runs on top of a hypervisor.
+- You can run multiple VMs on a single physical machine.
+
+
 ## Docker components
 - [Dockerfile](#1-dockerfile)
 - [Docker Image](#2-docker-image)
