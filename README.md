@@ -17,6 +17,9 @@
 - Docker Layering
 
 ### Docker Vs VM
+
+![vm vs docker](Images/VM%20vs%20Docker.png)
+
 **Docker**
 > Docker is a platform that uses containers to run applications in lightweight, isolated environments.
 - Containers share the host OS kernel, unlike VMs.
